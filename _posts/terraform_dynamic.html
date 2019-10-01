@@ -1,0 +1,36 @@
+### Dynamic nested blocks in Terraform
+
+I was recently tasked with creating a Terraform module to allow our operations team to build servers, while making sure that what they deployed was maintained by Terraform.
+One of the hurdles we ran into, was allowing operations to deploy various types of servers that may have multiple disks attached to it, while some would only have a single 
+OS disk. Thankfully, with Terraform 0.12, we can do this using a dynamic nested block.
+
+We replaced the static call to the OS disk with the following code block. At a minimum, we will pass in one disk to create, which would be 
+the os disk. In our variables.tf file, we want to add our `disks_to_provision` variable. The variable will be a list of maps to strings.
+Providing a default will ensure that we always provision at least one disk for our OS. If we declare additional disks in the configuration,
+we just need to make sure we specify the OS disk first, then our additional disks.
+
+```hcl
+variable "disks_to_provision" {
+  type = list(map(string))
+  default = [
+      {
+          size = "100"      // Size in GB
+          unit_number = 0   // OS disk will be unit_number 0
+      }
+  ]
+}
+```
+
+Calling our nested block, we loop through the `disks_to_provision` variable, which in turn is just calling `disk`.
+
+```hcl
+dynamic "disk" {
+    for_each = var.disks_to_provision
+    content {
+      label            = "${var.vm_name}${count.index}-${disk.value.unit_number}-disk"
+      size             = "${disk.value.size}"
+      thin_provisioned = "${var.template_disk_thin_provisioned}"
+      unit_number      = "${disk.value.unit_number}"
+    }
+  }
+```
