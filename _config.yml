@@ -1,3 +1,5 @@
 theme: jekyll-theme-slate
+title: DevOps Dunkin
+tagline: ''
 pages_list:
   About: '/about'
