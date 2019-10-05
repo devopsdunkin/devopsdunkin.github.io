@@ -3,3 +3,5 @@ title: DevOps Dunkin
 tagline: ''
 pages_list:
   About: '/about'
+  Projects: 
+    - terraform-provider-nagios: 'https://devopsdunkin.github.io/terraform-provider-nagios'
