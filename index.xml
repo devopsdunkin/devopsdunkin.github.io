@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>devops with dunkin</title>
-    <link>https://devopsdunkin.github.io/</link>
-    <description>Recent content on devops with dunkin</description>
+    <title></title>
+    <link>/</link>
+    <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Tue, 22 Oct 2019 11:33:52 -0500</lastBuildDate>
     
-	<atom:link href="https://devopsdunkin.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>about</title>
-      <link>https://devopsdunkin.github.io/about/</link>
+      <link>/about/</link>
       <pubDate>Tue, 22 Oct 2019 11:33:52 -0500</pubDate>
       
-      <guid>https://devopsdunkin.github.io/about/</guid>
+      <guid>/about/</guid>
       <description>Placeholder text while we set things up. Come back soon!</description>
     </item>
     
     <item>
       <title>Testpost</title>
-      <link>https://devopsdunkin.github.io/posts/testpost/</link>
+      <link>/posts/testpost/</link>
       <pubDate>Tue, 22 Oct 2019 10:10:13 -0500</pubDate>
       
-      <guid>https://devopsdunkin.github.io/posts/testpost/</guid>
+      <guid>/posts/testpost/</guid>
       <description>This is a test post just to see how things show up</description>
     </item>
     
