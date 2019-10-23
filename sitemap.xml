@@ -23,6 +23,11 @@
   </url>
   
   <url>
+    <loc>https://devopsdunkin.github.io/posts/testpost2/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://devopsdunkin.github.io/categories/</loc>
   </url>
   
