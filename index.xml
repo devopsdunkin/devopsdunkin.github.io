@@ -6,9 +6,28 @@
     <description>Recent content on devops with dunkin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Tue, 22 Oct 2019 11:33:52 -0500</lastBuildDate>
     
 	<atom:link href="https://devopsdunkin.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>about</title>
+      <link>https://devopsdunkin.github.io/about/</link>
+      <pubDate>Tue, 22 Oct 2019 11:33:52 -0500</pubDate>
+      
+      <guid>https://devopsdunkin.github.io/about/</guid>
+      <description>Placeholder text while we set things up. Come back soon!</description>
+    </item>
+    
+    <item>
+      <title>Testpost</title>
+      <link>https://devopsdunkin.github.io/posts/testpost/</link>
+      <pubDate>Tue, 22 Oct 2019 10:10:13 -0500</pubDate>
+      
+      <guid>https://devopsdunkin.github.io/posts/testpost/</guid>
+      <description>This is a test post just to see how things show up</description>
+    </item>
     
   </channel>
 </rss>
