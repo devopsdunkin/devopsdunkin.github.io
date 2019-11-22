@@ -6,10 +6,19 @@
     <description>Recent content on devops with dunkin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Nov 2019 07:20:17 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 22 Nov 2019 07:59:23 -0600</lastBuildDate>
     
 	<atom:link href="https://devopsdunkin.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>contact</title>
+      <link>https://devopsdunkin.github.io/contact/</link>
+      <pubDate>Fri, 22 Nov 2019 07:59:23 -0600</pubDate>
+      
+      <guid>https://devopsdunkin.github.io/contact/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>terraform provider nagios</title>
@@ -27,15 +36,6 @@
       
       <guid>https://devopsdunkin.github.io/about/</guid>
       <description>My name&amp;rsquo;s Chris and I am an infrastructure engineer with 10+ years working in IT in various industries. I recently started a new job back in February 2019 that got me involved with a lot of new tools. As I have been learning more about them and this whole DevOps methodology, I have stumbled across many things that aren&amp;rsquo;t well documented in the wild. I wanted to start this blog to help fill that void and document it.</description>
-    </item>
-    
-    <item>
-      <title>contact</title>
-      <link>https://devopsdunkin.github.io/contact/</link>
-      <pubDate>Thu, 07 Nov 2019 07:59:23 -0600</pubDate>
-      
-      <guid>https://devopsdunkin.github.io/contact/</guid>
-      <description>()[https://github.com/devopsdunkin/terraform-provider-nagios]</description>
     </item>
     
   </channel>
