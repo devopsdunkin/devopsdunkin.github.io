@@ -6,27 +6,18 @@
     <description>Recent content in Posts on devops with dunkin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Oct 2019 10:10:13 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 22 Nov 2019 07:20:17 -0600</lastBuildDate>
     
 	<atom:link href="https://devopsdunkin.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Testpost</title>
-      <link>https://devopsdunkin.github.io/posts/testpost/</link>
-      <pubDate>Tue, 22 Oct 2019 10:10:13 -0500</pubDate>
+      <title>terraform provider nagios</title>
+      <link>https://devopsdunkin.github.io/posts/terraform-provider-nagios/</link>
+      <pubDate>Fri, 22 Nov 2019 07:20:17 -0600</pubDate>
       
-      <guid>https://devopsdunkin.github.io/posts/testpost/</guid>
-      <description>This is a test post just to see how things show up</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://devopsdunkin.github.io/posts/testpost2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://devopsdunkin.github.io/posts/testpost2/</guid>
-      <description></description>
+      <guid>https://devopsdunkin.github.io/posts/terraform-provider-nagios/</guid>
+      <description>For the past several months, I have spent several evenings learning how to write Go and how to create a Terraform provider. It&amp;rsquo;s been quite a fun experience and it&amp;rsquo;s exciting to see that work starting to pay off. As of October 31, version 1.0.0 has been released! This version allows you to manage hosts, host groups, services and service groups within Nagios XI. The plan is to release several updates over the coming weeks that will add other resources and eventually data sources into the fold.</description>
     </item>
     
   </channel>

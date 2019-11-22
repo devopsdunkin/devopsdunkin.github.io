@@ -3,28 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://devopsdunkin.github.io/about/</loc>
-    <lastmod>2019-10-22T11:33:52-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://devopsdunkin.github.io/</loc>
-    <lastmod>2019-10-22T11:33:52-05:00</lastmod>
+    <lastmod>2019-11-22T07:20:17-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://devopsdunkin.github.io/posts/</loc>
-    <lastmod>2019-10-22T10:10:13-05:00</lastmod>
+    <lastmod>2019-11-22T07:20:17-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://devopsdunkin.github.io/posts/testpost/</loc>
-    <lastmod>2019-10-22T10:10:13-05:00</lastmod>
+    <loc>https://devopsdunkin.github.io/posts/terraform-provider-nagios/</loc>
+    <lastmod>2019-11-22T07:20:17-06:00</lastmod>
   </url>
   
   <url>
-    <loc>https://devopsdunkin.github.io/posts/testpost2/</loc>
-    <priority>0</priority>
+    <loc>https://devopsdunkin.github.io/about/</loc>
+    <lastmod>2019-11-22T07:33:52-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://devopsdunkin.github.io/contact/</loc>
+    <lastmod>2019-11-07T07:59:23-06:00</lastmod>
   </url>
   
   <url>
