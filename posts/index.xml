@@ -6,10 +6,19 @@
     <description>Recent content in Posts on devops with dunkin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Nov 2019 07:20:17 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2019 21:10:42 -0600</lastBuildDate>
     
 	<atom:link href="https://devopsdunkin.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>terraform - dynamically created vSphere anti-affinity rules</title>
+      <link>https://devopsdunkin.github.io/posts/tf-dynamic-vsphere-drs-rules/</link>
+      <pubDate>Sun, 08 Dec 2019 21:10:42 -0600</pubDate>
+      
+      <guid>https://devopsdunkin.github.io/posts/tf-dynamic-vsphere-drs-rules/</guid>
+      <description>As we&amp;rsquo;ve continued to mature our Terraform modules, we have been working to give our operations team more flexbility in how they are consumed. We wanted to make sure if more than one server was being deployed from a single configuration, that vSphere DRS anti-affinity rules would be created for them. I think we&amp;rsquo;ve all forgotten to create an anti-affinity rule or two. So now, our Terraform does this for us.</description>
+    </item>
     
     <item>
       <title>terraform provider nagios</title>

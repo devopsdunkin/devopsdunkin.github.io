@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <title>terraform - devops with dunkin</title>
+    <title>terraform - dynamically created vSphere anti-affinity rules - devops with dunkin</title>
     
-    <meta name="description" content="">
+    <meta name="description" content="As we&rsquo;ve continued to mature our Terraform modules, we have been working to give our operations team more flexbility in how they are consumed. We wanted to make sure if more than one server was being deployed from a single configuration, that vSphere DRS anti-affinity rules would be created for them. I think we&rsquo;ve all forgotten to create an anti-affinity rule or two. So now, our Terraform does this for us.">
     <meta name="author" content="">
     
     <link href="https://devopsdunkin.github.io/an-old-hope.min.css" rel="stylesheet">
@@ -65,7 +65,7 @@
       }
     </script>
   </head>
-  <body class="list">
+  <body class="single">
     <script>
       setTheme();
     </script>
@@ -96,47 +96,60 @@
     <main class="main">
 
 
-
-
-
-<header class="page-header">
-  <h1>terraform</h1>
-</header>
-
-
-
-
-
-
-<article class="post-entry">
-  <header class="entry-header">
-    <h2>terraform - dynamically created vSphere anti-affinity rules</h2>
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">terraform - dynamically created vSphere anti-affinity rules</h1>
+    <div class="post-meta">December 8, 2019</div>
   </header>
-  <section class="entry-content">
-   <p>As we’ve continued to mature our Terraform modules, we have been working to give our operations team more flexbility in how they are consumed. We wanted to make sure if more than one server was being deployed from a single configuration, that vSphere DRS anti-affinity rules would be created for them. I think we’ve all forgotten to create an anti-affinity rule or two. So now, our Terraform does this for us....</p>
-  </section>
-  <footer class="entry-footer">
-    <time>December 8, 2019</time>
+  <div class="post-content"><p>As we&rsquo;ve continued to mature our Terraform modules, we have been working to give our operations team more flexbility in how they are consumed. We wanted to make sure if more than one server was being deployed from a single configuration, that vSphere DRS anti-affinity rules would be created for them. I think we&rsquo;ve all forgotten to create an anti-affinity rule or two. So now, our Terraform does this for us. If we pass in more than one IP address through the <code>ip_addresses</code> list variable, then the ternary should return 1, which tells Terraform to create the resource. Otherwise, it should return 0 and no rules will be created.</p>
+
+<pre><code class="language-hcl">resource &quot;vsphere_virtual_machine&quot; &quot;web-servers&quot; {
+    ...
+    &lt;server config&gt;
+    ...
+}
+
+resource &quot;vsphere_compute_cluster_vm_anti_affinity_rule&quot; &quot;web_server_farm_anti_affinity_rule&quot; {
+    count = length(var.ip_addresses) &gt; 1 ? 1 : 0
+
+    name                = &quot;web-server-farm-anti-affinity-rule&quot;
+    compute_cluster_id  = &quot;${data.vsphere_compute_cluster.cluster.id}&quot;
+    virtual_machine_ids = &quot;${vsphere_virtual_machine.web-servers.*.id}&quot;
+}
+
+output &quot;anti-affinity-rule-name&quot; {
+    value = &quot;${vsphere_compute_cluster_vm_anti_affinity_rule.cluster_vm_anti_affinity_rule.*.name}&quot;
+}
+</code></pre>
+
+<p>Since this was all done in our module, we have been able to abstract this away from the user, so they don&rsquo;t need to know a bunch of details. All they need to do is decide how many servers they need and define the IP addresses. We just made sure to include some documentation so they would be aware that the rules would be created.</p>
+
+<p>Cheers!</p>
+</div>
+  
+  <footer class="post-footer">
+    <ul class="post-tags">
+      
+      
+      <li><a href="https://devopsdunkin.github.io/tags/terraform">terraform</a></li>
+      
+      
+      <li><a href="https://devopsdunkin.github.io/tags/vmware">vmware</a></li>
+      
+      
+      <li><a href="https://devopsdunkin.github.io/tags/vsphere">vsphere</a></li>
+      
+      
+      <li><a href="https://devopsdunkin.github.io/tags/drs">drs</a></li>
+      
+    </ul>
   </footer>
-  <a class="entry-link" href="https://devopsdunkin.github.io/posts/tf-dynamic-vsphere-drs-rules/"></a>
+  
+  
+  
+  
+  
 </article>
-
-<article class="post-entry">
-  <header class="entry-header">
-    <h2>terraform provider nagios</h2>
-  </header>
-  <section class="entry-content">
-   <p>For the past several months, I have spent several evenings learning how to write Go and how to create a Terraform provider. It’s been quite a fun experience and it’s exciting to see that work starting to pay off. As of October 31, version 1.0.0 has been released! This version allows you to manage hosts, host groups, services and service groups within Nagios XI. The plan is to release several updates over the coming weeks that will add other resources and eventually data sources into the fold....</p>
-  </section>
-  <footer class="entry-footer">
-    <time>November 22, 2019</time>
-  </footer>
-  <a class="entry-link" href="https://devopsdunkin.github.io/posts/terraform-provider-nagios/"></a>
-</article>
-
-
-
-
 
 </main>
 <footer class="footer">

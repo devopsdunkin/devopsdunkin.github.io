@@ -6,10 +6,46 @@
     <description>Recent content in Tags on devops with dunkin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Nov 2019 07:20:17 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2019 21:10:42 -0600</lastBuildDate>
     
 	<atom:link href="https://devopsdunkin.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>drs</title>
+      <link>https://devopsdunkin.github.io/tags/drs/</link>
+      <pubDate>Sun, 08 Dec 2019 21:10:42 -0600</pubDate>
+      
+      <guid>https://devopsdunkin.github.io/tags/drs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>terraform</title>
+      <link>https://devopsdunkin.github.io/tags/terraform/</link>
+      <pubDate>Sun, 08 Dec 2019 21:10:42 -0600</pubDate>
+      
+      <guid>https://devopsdunkin.github.io/tags/terraform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vmware</title>
+      <link>https://devopsdunkin.github.io/tags/vmware/</link>
+      <pubDate>Sun, 08 Dec 2019 21:10:42 -0600</pubDate>
+      
+      <guid>https://devopsdunkin.github.io/tags/vmware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vsphere</title>
+      <link>https://devopsdunkin.github.io/tags/vsphere/</link>
+      <pubDate>Sun, 08 Dec 2019 21:10:42 -0600</pubDate>
+      
+      <guid>https://devopsdunkin.github.io/tags/vsphere/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>golang</title>
@@ -26,15 +62,6 @@
       <pubDate>Fri, 22 Nov 2019 07:20:17 -0600</pubDate>
       
       <guid>https://devopsdunkin.github.io/tags/nagios/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>terraform</title>
-      <link>https://devopsdunkin.github.io/tags/terraform/</link>
-      <pubDate>Fri, 22 Nov 2019 07:20:17 -0600</pubDate>
-      
-      <guid>https://devopsdunkin.github.io/tags/terraform/</guid>
       <description></description>
     </item>
     
