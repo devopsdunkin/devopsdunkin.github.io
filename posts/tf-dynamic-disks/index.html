@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <title>devops with dunkin</title>
+    <title>Terraform - Dynamic Disks - devops with dunkin</title>
     
-    <meta name="description" content="">
+    <meta name="description" content="With the release of Terraform 0.12, one of the great, new features is dynamic blocks. I have been working on a Terraform module for our operations team to consume to build servers via a CI/CD pipeline and needed to allow them to provision an arbitary number of disks to each deployment.
+Below, we define the dynamic block within the module itself. We pass in a variable, called disks_to_provision, which is a list of maps.">
     <meta name="author" content="">
     
     <link href="https://devopsdunkin.github.io/an-old-hope.min.css" rel="stylesheet">
@@ -65,14 +66,14 @@
       }
     </script>
   </head>
-  <body class="list home">
+  <body class="single">
     <script>
       setTheme();
     </script>
     <header class="header">
       <nav class="nav">
         
-        <h1 class="logo"><a href="https://devopsdunkin.github.io/">devops with dunkin</a></h1>
+        <p class="logo"><a href="https://devopsdunkin.github.io/">devops with dunkin</a></p>
         
         
         <ul class="menu">
@@ -96,46 +97,62 @@
     <main class="main">
 
 
-
-
-
-
-
-
-
-
-
-
-<article class="first-entry">
-  <header class="entry-header">
-    <h2>Terraform - Dynamic Disks</h2>
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Terraform - Dynamic Disks</h1>
+    <div class="post-meta">January 6, 2020</div>
   </header>
-  <section class="entry-content">
-   <p>With the release of Terraform 0.12, one of the great, new features is dynamic blocks. I have been working on a Terraform module for our operations team to consume to build servers via a CI/CD pipeline and needed to allow them to provision an arbitary number of disks to each deployment.
-Below, we define the dynamic block within the module itself. We pass in a variable, called disks_to_provision, which is a list of maps....</p>
-  </section>
-  <footer class="entry-footer">
-    <time>January 6, 2020</time>
+  <div class="post-content"><p>With the release of Terraform 0.12, one of the great, new features is dynamic blocks. I have been working on a Terraform module for our operations team to consume to build servers via a CI/CD pipeline and needed to allow them to provision an arbitary number of disks to each deployment.</p>
+
+<p>Below, we define the dynamic block within the module itself. We pass in a variable, called <code>disks_to_provision</code>, which is a list of maps. We loop through and dynamically create each disk with a unique label.</p>
+
+<pre><code class="language-hcl">dynamic &quot;disk&quot; {
+    for.each = [ for disk in var.disks_to_provision: {
+      size = disk.size
+      unit_number = disk.unit_number
+    }]
+    content {
+      label = &quot;${var.vm_name}${count.index}-${disk.value.unit_number}-disk&quot;
+      size = &quot;${disk.value.size}&quot;
+      unit_number = &quot;${disk.value.unit_number}&quot;
+    }
+  }
+</code></pre>
+
+<p>Putting this together in a module, we can abstract a lot of this and make it easier to consume. Below, we are defining our <code>disks_to_provision</code> variable. Now all the consumer needs to worry about is the size of the disk. You could even abstract away needing to provide a <code>unit_number</code>. We decided to keep that as an input due to some VMware best practices for storage, but this would definitely vary depending upon the Terraform provider being used.</p>
+
+<pre><code class="language-hcl">disks_to_provision = [
+    {
+        size = 100,
+        unit_number = 0
+    },
+    {
+        size = 250,
+        unit_number = 1
+    }
+]
+</code></pre>
+
+<p>Terraform 0.12 has been out for a while, so making the jump is not much of a big deal, and definitely worth it for this feature alone. It&rsquo;s made my job a lot easier!</p>
+</div>
+  
+  <footer class="post-footer">
+    <ul class="post-tags">
+      
+      
+      <li><a href="https://devopsdunkin.github.io/tags/terraform">terraform</a></li>
+      
+      
+      <li><a href="https://devopsdunkin.github.io/tags/storage">storage</a></li>
+      
+    </ul>
   </footer>
-  <a class="entry-link" href="https://devopsdunkin.github.io/posts/tf-dynamic-disks/"></a>
+  
+  
+  
+  
+  
 </article>
-
-<article class="post-entry">
-  <header class="entry-header">
-    <h2>terraform provider nagios</h2>
-  </header>
-  <section class="entry-content">
-   <p>For the past several months, I have spent several evenings learning how to write Go and how to create a Terraform provider. It’s been quite a fun experience and it’s exciting to see that work starting to pay off. As of October 31, version 1.0.0 has been released! This version allows you to manage hosts, host groups, services and service groups within Nagios XI. The plan is to release several updates over the coming weeks that will add other resources and eventually data sources into the fold....</p>
-  </section>
-  <footer class="entry-footer">
-    <time>November 22, 2019</time>
-  </footer>
-  <a class="entry-link" href="https://devopsdunkin.github.io/posts/terraform-provider-nagios/"></a>
-</article>
-
-
-
-
 
 </main>
 <footer class="footer">

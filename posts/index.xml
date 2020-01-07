@@ -6,10 +6,20 @@
     <description>Recent content in Posts on devops with dunkin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Nov 2019 07:20:17 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jan 2020 20:20:25 -0600</lastBuildDate>
     
 	<atom:link href="https://devopsdunkin.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Terraform - Dynamic Disks</title>
+      <link>https://devopsdunkin.github.io/posts/tf-dynamic-disks/</link>
+      <pubDate>Mon, 06 Jan 2020 20:20:25 -0600</pubDate>
+      
+      <guid>https://devopsdunkin.github.io/posts/tf-dynamic-disks/</guid>
+      <description>With the release of Terraform 0.12, one of the great, new features is dynamic blocks. I have been working on a Terraform module for our operations team to consume to build servers via a CI/CD pipeline and needed to allow them to provision an arbitary number of disks to each deployment.
+Below, we define the dynamic block within the module itself. We pass in a variable, called disks_to_provision, which is a list of maps.</description>
+    </item>
     
     <item>
       <title>terraform provider nagios</title>
